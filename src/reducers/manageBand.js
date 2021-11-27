@@ -6,17 +6,19 @@ export default function manageBand(state = {
   switch(action.type) {
 
     case "ADD_BAND":
-      
       const band = {
         id: uuid,
-        name: action.name.name
+        name: action.name
       }
-// console.log({...state, bands: state.bands.concat(band)})
-      return {...state, bands: state.bands.concat(band)}
-
+      // console.log({...state, bands: state.bands.concat(band)})
+      return {...state, bands: [...state.bands, band]}
+      
       case "DELETE_BAND":
-debugger
-        return {bands: state.bands.filter((band) => band.id !== action.id) }
+        // debugger
+        console.log(action)
+        // return {bands: state.bands.filter((band) => band.id !== action.id) }
+        const newArray = state.bands.filter((band) => band.id !== action.id)
+        return {bands: newArray }
 
 
     default:

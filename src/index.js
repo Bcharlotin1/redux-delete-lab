@@ -6,7 +6,9 @@ import { Provider } from 'react-redux';
 import App from './App';
 import manageBand from './reducers/manageBand';
 
-const store = createStore(manageBand)
+const store = createStore(manageBand, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+
+)
 
 
 ReactDOM.render(

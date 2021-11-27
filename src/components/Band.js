@@ -1,32 +1,23 @@
-import React from "react";
+import React from 'react'
 
-const Band = (props) => {
+export default function Band({band, deleteBand}) {
+    console.log(band)
+    const handleClick = ()=>{
+        deleteBand(band.id)
+      }
 
-console.log(props)
-    let bandArray = props.props.bands
-    return(
-       <div>
-           { bandArray.map(band=>{
-            //    debugger
-              return(  
-                <div>
-                    <li
-                    key={band.id}
-                    >{band.name}
-                    </li>
+    return (
+        <div>
+            <li
+                key={band.id}
+                >{band.name}
+            </li>
                     
-                    <button
-                    onClick={props.props.deleteBand(band.id)}
-                    >Delete
-                    </button>`
-                </div>
-              )
-            
-           })}
-       </div>
-      
-       
+            <button
+                onClick={handleClick}
+                >Delete
+            </button>
+        </div>
     )
 }
 
-export default Band 

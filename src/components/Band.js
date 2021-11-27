@@ -1,19 +1,27 @@
 import React from "react";
 
 const Band = (props) => {
-    console.log(props.props.bands)
 
+console.log(props)
     let bandArray = props.props.bands
-   
     return(
        <div>
-           {bandArray.map(band=>{
+           { bandArray.map(band=>{
+            //    debugger
               return(  
-                <li
-                key={band.id}
-                >{band.name}
-                </li>
+                <div>
+                    <li
+                    key={band.id}
+                    >{band.name}
+                    </li>
+                    
+                    <button
+                    onClick={props.props.deleteBand(band.id)}
+                    >Delete
+                    </button>`
+                </div>
               )
+            
            })}
        </div>
       

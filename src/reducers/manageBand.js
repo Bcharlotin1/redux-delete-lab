@@ -9,12 +9,13 @@ export default function manageBand(state = {
       
       const band = {
         id: uuid,
-        name: action.name
+        name: action.name.name
       }
-
+// console.log({...state, bands: state.bands.concat(band)})
       return {...state, bands: state.bands.concat(band)}
 
       case "DELETE_BAND":
+debugger
         return {bands: state.bands.filter((band) => band.id !== action.id) }
 
 

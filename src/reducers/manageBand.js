@@ -1,4 +1,4 @@
-import uuid from "uuid";
+// import uuid from "uuid";
 
 export default function manageBand(state = {
   bands: [],
@@ -7,7 +7,7 @@ export default function manageBand(state = {
 
     case "ADD_BAND":
       const band = {
-        id: uuid,
+        id: Math.random(),
         name: action.name
       }
       // console.log({...state, bands: state.bands.concat(band)})
@@ -18,7 +18,7 @@ export default function manageBand(state = {
         console.log(action)
         // return {bands: state.bands.filter((band) => band.id !== action.id) }
         const newArray = state.bands.filter((band) => band.id !== action.id)
-        return {bands: newArray }
+        return {newArray}
 
 
     default:
